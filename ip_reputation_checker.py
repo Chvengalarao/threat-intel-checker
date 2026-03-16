@@ -4,15 +4,18 @@ malicious_ips = {
     "103.45.67.89": {"country": "Unknown", "risk": "Medium"}
 }
 
+print("=== Threat Intelligence IP Checker ===")
+
 ip = input("Enter IP address: ")
 
-print("\n=== Threat Intelligence Report ===")
+print("\nThreat Intelligence Report")
+print("---------------------------")
 
 if ip in malicious_ips:
-    print("IP:", ip)
-    print("Status: Malicious")
-    print("Country:", malicious_ips[ip]["country"])
-    print("Risk Score:", malicious_ips[ip]["risk"])
+    print("IP Address :", ip)
+    print("Status     : Malicious")
+    print("Country    :", malicious_ips[ip]["country"])
+    print("Risk Level :", malicious_ips[ip]["risk"])
 else:
-    print("IP:", ip)
-    print("Status: Not found in threat database")
+    print("IP Address :", ip)
+    print("Status     : No threat intelligence found")
